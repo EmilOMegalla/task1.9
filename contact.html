@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> --><!-- This was for testing-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/necolas.github.io_normalize.css_8.0.1_normalize.css">
+    <!--This to reset any browser defult styling -->
+    <link rel="stylesheet" type="text/css" href="css/style.production.css" />
+</head>
+
+<body>
+    <header class="page-header">        
+        <img src="img/web_developer.png" alt="logo for web developer" class="logo">
+
+        <nav class="main-navigation page-header_item">
+            <ul role="menubar" class="navigation-list">
+                <li role="presentation">
+                    <a href="index.html" role="menuitem" class="navigation-list__item navigation-list__item--active">Home</a>
+                </li>
+                <li role="presentation">
+                    <a href="about.html" role="menuitem" class="navigation-list__item">About Me as Web developer</a>
+                </li>
+                <li role="presentation">
+                    <a href="contact.html" role="menuitem" class="navigation-list__item">Contact</a>
+                </li>
+                 <li role="presentation">
+                    <a href="work.html" role="menuitem" class="navigation-list__item">Work</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <h1>Contact Me</h1>
+        <p>Judson Rd Thornleigh</p>
+        <a href="mailto:emilmegalla3@gmail.com">Email: emilmegalla3@gmail.com</a><br />
+        <a href="tel:+61432271092">Mobile +61432271092</a><br />
+        <a href="skype:hello.careerfoundry">Hello.careerfoundry</a><br />
+        <a href="mailto:emilmegalla3@gmail.com">Contact me</a>
+
+        <form action="/login-form-action" method="post">
+            <label class="standard-label" for="contact-email">Email:</label>
+            <input type="email" id="contact-email" name="user_email" required />
+            <!-- We use for="contact-tel" and id="contact-tel" for two reasons when the user click on the word telphone the correct input element is automatically highlighted and the cursor placed inside-->
+            <label for="contact-tel">Telephone:</label>
+            <input type="tel" id="contact-tel"
+                pattern="\d{3}[\-]\d{3}[\-]\d{4}" /><!-- This will accept the input that match follow the the pattern ### ### #### -->
+            <br />
+            <label for="contact-message">Message:</label>
+            <textarea maxlength="200" id="contact-message"
+                required></textarea><!-- the maxlength is used to limit how many charachters can be used on the message. -->
+            <input type="submit" value="Send message" />
+            <br />
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <footer class="page-footer">
+        <p>Find me on</p>
+        <div class="social-media">
+            <img src="img/4747499_github_icon.svg" alt="Github" />
+            <img src="img/11053969_x_logo_twitter_new_brand_icon.svg" alt="X" />
+            <img src="img/294671_linkedin_icon.svg" alt="Linkedin" />
+        </div>
+    </footer>
+
+
+    <script src="js/tota11y.min.js"></script>
+</body>
+
+</html>
