@@ -1,341 +1,244 @@
 /* By placing the :root on the very top of CSS. we are definging the the scope of the variable to be available for use to all elements (Global) */
-/* CSS variable is defined by -- to the front of the variable name. this is in contrast with Sass, where you use the $ sign to define the varialbes .*/
+
+/* CSS variable is defined by -- to the front of the variable name. this is in contrast with Sass, where you use the $ sign to define the varialbes. */
+
 /* to pass the value onto the property you need to use var() */
 :root {
-    /* colors */
-    --primary-color: lightgray;
-    --secondary-color: #a0b7a8;
-    --dark-grey: #2b2b2b;
-    --linksColor: #000000;
-    --visitedLinks: #67056e;
-    --hoverAndFocus: rgb(97, 76, 233);
-    --activeLink: #016d29;
-    --sunColor0: #edc655;
-    --sunColor50: #fcffad;
-    --sunColor100: #f76414;
+  /* colors */
+  --primary-color: lightgray;
+  --secondary-color: #a0b7a8;
+  --dark-grey: #2b2b2b;
+  --linksColor: #000;
+  --visitedLinks: #67056e;
+  --hoverAndFocus: rgb(97, 76, 233);
+  --activeLink: #016d29;
+  --sunColor0: #edc655;
+  --sunColor50: #fcffad;
+  --sunColor100: #f76414;
 
-    /* Font-sizes */
-    --HeadingFontSizeH1: 30px; 
-    --HeadingFontSizeH2: 24px;
-    --HeadingFontSizeH3: 18px;
-
-    --fontWeight: 700;
+  /* Font-sizes */
+  --HeadingFontSizeH1: 30px;
+  --HeadingFontSizeH2: 24px;
+  --HeadingFontSizeH3: 18px;
+  --fontWeight: 700;
 }
 
 * {
-    /* this will ensure that all elements width does inlcude the padding and borders within the total width. */
-    /* This does force the padding and border to be included in the final specified width rather than being added on top*/
-    box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 /* Typography */
 
-
 body {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.6;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .logo {
-    width: 200px;
-    height: 70px;
+  width: 200px;
+  height: 70px;
 }
+
 .page-header {
-    display: flex;
-    width: 100%; 
-    padding: 20px;
+  display: flex;
+  width: 100%;
+  padding: 20px;
 }
 
 .page-header_item {
-    flex: 0 1 200px;
+  flex: 0 1 200px;
 }
 
 .page-header_item:last-child {
-    flex-grow: 1;
-    text-align: right;
-   
+  flex-grow: 1;
+  text-align: right;
 }
 
 .navigation-list {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .navigation-list li {
-    display: inline-block;
-    margin-left: 15px;
+  display: inline-block;
+  margin-left: 15px;
 }
 
 h1 {
-    font-size: var(--HeadingFontSizeH1);
-    font-weight: var(--fontWeight);
+  font-size: var(--HeadingFontSizeH1);
+  font-weight: var(--fontWeight);
 }
 
 h2 {
-    font-size: var(--HeadingFontSizeH2);
-    font-weight: var(--fontWeight);
+  font-size: var(--HeadingFontSizeH2);
+  font-weight: var(--fontWeight);
 }
 
 h3 {
-    font-size: var(--HeadingFontSizeH3);
-    font-weight: var(--fontWeight) ;
+  font-size: var(--HeadingFontSizeH3);
+  font-weight: var(--fontWeight);
 }
 
 a {
-    color: var(--linksColor);
+  color: var(--linksColor);
 }
 
-
 a:visited {
-    color: var(--visitedLinks);
+  color: var(--visitedLinks);
 }
 
 /* The a:hover must come after the a:visited in CSS definition in order to be effective. like */
-a:hover, a:focus {
-    text-decoration: none; /* no underline when hovering over the link. */
-    color: var(--hoverAndFocus); /* turn the link color to this color when hovering over or focusing on the link */
-    cursor: pointer;
-    opacity: 0.9;
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: var(--hoverAndFocus);
+  cursor: pointer;
+  opacity: 0.9;
 }
 
-/* the active must come after a:hover in CSS definition in order to work.*/
+/* the active must come after a:hover in CSS definition in order to work. */
 a:active {
-    color: var(--activeLink)
+  color: var(--activeLink);
 }
-
 
 .navigation-list__item--active {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .profile_portrait {
-    float: left;
-    width: 250px;
-    margin-right: 40px;
-    height: auto;/* If yoiu aren't sure what is ratio goin to beor want to keep the design more flexible, as CSS the height will automatically be set to a value that matches the correct ratio. */
-    border-radius: 50%; /* note border radius take fou value like margin and padding */
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  height: auto;
+  border-radius: 50%;
 }
 
-
-
 .page-footer {
-    clear: both; /* this will clear any float around the footter*/
-    display: flex;
-    flex-direction: column;
-    /* Note text align property can center any inline and inline block elements*/
-    text-align: center;
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .profile {
-    max-width: 700px; /* This will keep the box from exceeding 700px*/
-    margin: 0 auto; /* This will centre the main element */
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-/* Responsive design*/
+/* Responsive design */
 .project-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* grid-template-rows: 100px; */
-    grid-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 
 .project__item {
-    background-color: var(--primary-color);
-    padding: 10px;
+  background-color: var(--primary-color);
+  padding: 10px;
 }
 
 /* I used ChatGPT to create this code, then i modified it to suit my code. */
 .project__item:hover {
-    background-color: var(--secondary-color);
-    transform: scale(1.1) rotate(5deg);
-}
-
-#content {
-    margin: 0 auto;
-    justify-content: center;
+  background-color: var(--secondary-color);
+  transform: scale(1.1) rotate(5deg);
 }
 
 /* Media queries */
 
-/* The value (all) in the bellow code specifies to which media it should be applied. in this case is all media */
-/* other possible values include (screen, print, speech) the calue (all) encompasses all of these */
-/* the Maxiwidth ==> defines up to which size the rule should be applied. in this case is 500px */
-
-/* This code block will change the layout from a 1-column grid to a 1-column grid by simple passing (1fr) to the (grid-template-columns) */
 @media all and (max-width: 200px) {
-    .project-list {
-        grid-template-columns: 1fr;
-    }
+  .project-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media all and (min-width: 200px) and (max-width: 500px) {
-    .project-list {
-        grid-template-columns: 1fr 1fr;
-    }
+  .project-list {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* Adding intermediary step where the screen go from a 2-column grid to a 4 column grid when the screen width
  is greater than 500px but less than 750px */
-@media all and (min-width: 500px) and (max-width: 750px){
-    .project-list {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .project-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
-@media all and (max-width: 750px){
-    .project-list {
-        grid-gap: 10px;
-    }
-    .project-list:last-child {
-        grid-column: auto / auto;
-        grid-row: auto / auto;
-    }
-    h1 {
-        font-size: 22px;
-    }
+@media all and (max-width: 750px) {
+  .project-list {
+    grid-gap: 10px;
+  }
+
+  .project-list:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
 }
-
-/* Animation */
-
-/* the color-change name in the bellow code is name that's given to the animation to help define it */
-/* bellow the name is instructions detailing from which value it should start and which value it should go */
-/* Note the fill is a specific CSS property that only applied to SVGs */
-
-/* @keyframes color-change {
-    from {
-        fill: #edc655
-    }
-    to {
-        fill: #f76414
-    }
-} */
-
-/* In addation to from to  rule . We can also use percentage value */
 
 @keyframes color-change {
-    0% {
-        fill: var(--sunColor0);
-    }
+  0% {
+    fill: var(--sunColor0);
+  }
 
-    50% {
-        fill: var(--sunColor50);
-    }
+  50% {
+    fill: var(--sunColor50);
+  }
 
-    100% {
-        fill: var(--sunColor100)
-    }
+  100% {
+    fill: var(--sunColor100);
+  }
 }
-
-/* The bellow code is a longer code to apply the animation for the class sun */
-/* .sun {
-    animation-duration: 4s;
-    animation-name: color-change;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: linear;
-} */
-
-/* The bellow code is much shorter and more perferable to be used */
 
 .sun {
-    animation: 4s color-change infinite alternate linear;
+  animation: 4s color-change infinite alternate linear;
 }
 
-/* the 0, 50px is the clould position (from) 0 is for horizontal and 50px is for vertical */
-/* this code will move the clould from 0 to 200 (horizontal) but will stay at the 50px vertical height */
 @keyframes cloud-move {
-    from {
-        transform: translate(0, 50px);
-    }
-    to {
-        transform: translate(200px, 50px);
-    }
+  from {
+    transform: translate(0, 50px);
+  }
+
+  to {
+    transform: translate(200px, 50px);
+  }
 }
 
-/* this is the longer version of the code */
-/* .cloud-front {
-    animation-duration: 30s;
-    animation-name: cloud-move;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: linear;
-} */
-
-/* This is the shorhand version */
 .cloud-front {
-    animation: 30s cloud-move infinite alternate linear;
+  animation: 30s cloud-move infinite alternate linear;
 }
 
 @keyframes cloud-move-reverse {
-    from {
-        transform: translate(446, 48px);
-    }
+  from {
+    transform: translate(446, 48px);
+  }
 
-    to {
-        transform: translate(100px, 48px);
-    }
+  to {
+    transform: translate(100px, 48px);
+  }
 }
 
-/* this is the longer version of the code */
-/* .cloud-back {
-    animation-duration: 30s;
-    animation-name: cloud-move-reverse;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: linear;
-} */
-
-/* This is the shorhand version */
 .cloud-back {
-    animation: 30s cloud-move-reverse infinite alternate linear;
+  animation: 30s cloud-move-reverse infinite alternate linear;
 }
 
 @keyframes background-color {
-    from {background-color: var(--primary-color);}
-    to {background-color: var(--secondary-color);}
+  from {
+    background-color: var(--primary-color);
+  }
+
+  to {
+    background-color: var(--secondary-color);
+  }
 }
 
 .section {
-    animation-duration: 3s;
-    animation-name: background-color;
-    animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-name: background-color;
+  animation-iteration-count: infinite;
 }
-
-
-/* The bellow code is no longer in use but left for learning porpuse. */
-
-
-/* (border: none;) overwrite browser defaults and resers the border */
-/* (font-family: inherit;) takes the font from the outer container */
-/* both commented code bellow are for learning puprpose*/
-/* transition-duration: 0.2s;
-transition-property: opacity; */
-/* button commented out as they are no longer in use */
-/* button, .button {
-    border: none; 
-    display: inline-block;
-    font-family: inherit;
-    background-color: #357b70;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 3px;
-    border-bottom: 2px solid rgba((0, 0, 0, 0.3), green, blue, alpha) ;
-    font-size: 16px;
-    color: white;
-    transition: opacity 0.2s;
-} */
-
-/* button:hover, button:focus, .button:hover,
-.button:focus {
-    color: var(--hoverAndFocus);
-    background-color: #2b2b2b;
-    cursor: pointer;
-    opacity: 0.9;
-
-}
-
-.button_secondary {
-    background-color: #e0b354;
-    color: #2b2b2b;
-} */
